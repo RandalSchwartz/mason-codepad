@@ -1,0 +1,42 @@
+name: "{{snake_name}}"
+description: A sample {{#dart}}dart{{/dart}}{{^dart}}flutter{{/dart}} application.
+version: 0.1.0
+# repository: https://github.com/my_org/my_repo
+
+environment:
+  sdk: ">=2.19.2 <3.0.0"
+
+dependencies:
+  fpdart:
+  riverpod_annotation:
+
+{{#dart}}
+  riverpod:
+{{/dart}}
+{{^dart}}
+  flutter:
+    sdk: flutter
+  cupertino_icons:
+  flutter_hooks:
+  hooks_riverpod:
+{{/dart}}
+
+dev_dependencies:
+  build_runner:
+  custom_lint:
+  riverpod_lint:
+  riverpod_generator:
+  very_good_analysis:
+
+{{#dart}}
+  test:
+{{/dart}}
+{{^dart}}
+  flutter_test:
+    sdk: flutter
+{{/dart}}
+
+{{^dart}}  
+flutter:
+  uses-material-design: true
+{{/dart}}
