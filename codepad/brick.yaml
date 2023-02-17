@@ -2,7 +2,7 @@ name: codepad
 description: Generate a playground with my favorite settings
 
 repository: https://github.com/RandalSchwartz/mason-codepad.git
-version: 0.4.1
+version: 0.4.3
 
 environment:
   mason: ">=0.1.0-dev.41 <0.1.0"

@@ -2,17 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 Future<void> main() async {
-  runApp(const FittedBox(child: CircularProgressIndicator.adaptive()));
+  // ignore: missing_provider_scope
+  // runApp(const FittedBox(child: CircularProgressIndicator.adaptive()));
 
   final container = ProviderContainer();
   // await container.read(prefsProvider.future);
   runApp(
-    UncontrolledProviderScope(
-      container: container,
+    ProviderScope(
+      parent: container,
       child: const MyApp(),
     ),
   );
 }
+
+// final prefsProvider = FutureProvider<DateTime>((ref) async {
+//   await Future<void>.delayed(const Duration(seconds: 2));
+//   return DateTime.now();
+// });
 
 class MyApp extends HookConsumerWidget {
   const MyApp({
