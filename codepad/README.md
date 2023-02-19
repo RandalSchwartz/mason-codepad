@@ -37,3 +37,7 @@ Packages included:
 - riverpod_lint (provides useful lints *and* refactorings)
 - fpdart (unused by any sample code, but waiting at the ready)
 - very_good_analysis
+
+Note that a flutter repo is built with support *only* for the web.
+This is to speed up the time-to-first-edit.
+You can always use `flutter create .` to add support for other platforms.
