@@ -23,9 +23,9 @@ exec mason make codepad -o "${2:-/tmp}" --dart=false --name="${1:-UUID}" </dev/n
 
 The first argument is the app name and name of the directory it will be created in within the output directory.
 If absent, a UUID will be used.
-This is great because you can just invoke "dplay" or "fplay" at a shell prompt and get a new app.
+This is great because you can just invoke `dplay` or `fplay` at a shell prompt and get a new app.
 
-The second argument is the output directory, and defaults to /tmp.
+The second argument is the output directory, and defaults to `/tmp`.
 
 The names are immaterial.  It's just what I happen to use.
 
@@ -39,10 +39,10 @@ Packages included:
 - flutter_hooks, riverpod_hooks
 - riverpod_generator, riverpod_annotation, build_runner
 - riverpod_lint (provides useful lints *and* refactorings)
-- fpdart (including a shim renaming State to FpState to avoid conflicts with Flutter)
+- fpdart (including a shim renaming `State` to `FpState` to avoid conflicts with Flutter)
 - very_good_analysis
 
-These aren't selectable.  Just delete the ones you don't want, but it's a good starting point for quick experiments.
+These aren't selectable.  Just ignore or delete the ones you don't want, but it's a good starting point for quick experiments.
 
 Note that a flutter repo is built with support *only* for the web.
 This is to speed up the time-to-first-edit.
