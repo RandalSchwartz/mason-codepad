@@ -2,7 +2,7 @@ name: codepad
 description: Generate a VSCode dart or flutter playground with my favorite settings
 
 repository: https://github.com/RandalSchwartz/mason-codepad.git
-version: 0.4.5+3
+version: 0.4.6
 
 environment:
   mason: ">=0.1.0-dev.41 <0.1.0"
