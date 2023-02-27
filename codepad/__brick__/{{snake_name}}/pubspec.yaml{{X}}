@@ -7,29 +7,29 @@ environment:
   sdk: ">=2.19.2 <3.0.0"
 
 dependencies:
-  fpdart:
-  riverpod_annotation:
+  fpdart: any
+  riverpod_annotation: any
 
 {{#dart}}
-  riverpod:
+  riverpod: any
 {{/dart}}
 {{^dart}}
   flutter:
     sdk: flutter
-  cupertino_icons:
-  flutter_hooks:
-  hooks_riverpod:
+  cupertino_icons: any
+  flutter_hooks: any
+  hooks_riverpod: any
 {{/dart}}
 
 dev_dependencies:
-  build_runner:
-  custom_lint:
-  riverpod_lint:
-  riverpod_generator:
-  very_good_analysis:
+  build_runner: any
+  custom_lint: any
+  riverpod_lint: any
+  riverpod_generator: any
+  very_good_analysis: any
 
 {{#dart}}
-  test:
+  test: any
 {{/dart}}
 {{^dart}}
   flutter_test:
