@@ -20,6 +20,8 @@ void run(HookContext context) {
   if (target.existsSync()) {
     throw Exception('Directory $snakeName already exists');
   }
+  final dartSdk = Platform.version.split(' ').first;
+  vars['dart_sdk'] = dartSdk;
 
   // print('vars are ${context.vars}');
 }
