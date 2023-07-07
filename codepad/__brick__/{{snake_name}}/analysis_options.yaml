@@ -6,5 +6,9 @@ linter:
     avoid_print: false
 
 analyzer:
+  language:
+    strict-casts: true
+    strict-inference: true
+    strict-raw-types: true
   plugins:
     - custom_lint
