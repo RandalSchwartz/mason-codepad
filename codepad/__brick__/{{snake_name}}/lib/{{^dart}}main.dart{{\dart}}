@@ -1,6 +1,7 @@
 // ignore_for_file: unused_import
 
 import 'package:{{snake_name}}/functional.dart';
+import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 
 Future<void> main() async {
@@ -31,13 +32,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      // themeMode: ThemeMode.dark,
+    return MaterialApp(
       // title: 'Call me an app!',
-      // theme: ThemeData(
-      //   primarySwatch: Colors.blue,
-      // ),
-      home: MyHomePage(),
+      theme: FlexThemeData.light(scheme: FlexScheme.mandyRed),
+      darkTheme: FlexThemeData.dark(scheme: FlexScheme.mandyRed),
+      home: const MyHomePage(),
     );
   }
 }
