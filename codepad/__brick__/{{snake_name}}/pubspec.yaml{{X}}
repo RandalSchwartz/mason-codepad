@@ -5,7 +5,10 @@ version: 0.1.0
 
 environment:
   sdk: ">={{dart_sdk}}"
-
+{{#dart}}
+executables:
+  {{snake_name}}:
+{{/dart}}
 dependencies:
   fpdart: any
   riverpod: any
