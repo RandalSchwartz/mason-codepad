@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.12.0] - 20204-08-27
+
+- Remember to update the Changelog!
+
+## [0.11.0] - 2024-08-27
+
+- update mason version for flutter 3.24
+
 ## [0.9.0] - 2024-02-17
 
 - Add executable path for `dart pub activate --source path .` for dart projects
