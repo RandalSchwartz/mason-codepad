@@ -28,11 +28,7 @@ You can always use `mason make codepad` directly to be prompted for the argument
 
 Packages included:
 
-- riverpod, flutter_riverpod
-- flutter_hooks, riverpod_hooks
-- riverpod_generator, riverpod_annotation, build_runner
-- riverpod_lint (provides useful lints *and* refactorings)
-- fpdart (including a shim renaming `State` to `FpState` to avoid conflicts with Flutter)
+- signals (for reactive state management)
 - very_good_analysis
 
 These aren't selectable.  Just ignore or delete the ones you don't want, but it's a good starting point for quick experiments.
