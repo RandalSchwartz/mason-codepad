@@ -20,8 +20,8 @@ jobs:
       - name: Install Mason
         run: dart pub global activate mason_cli
 
+      - name: Log in to BrickHub
+        run: mason login --email ${{ secrets.BRICKHUB_EMAIL }} --password ${{ secrets.BRICKHUB_PASSWORD }}
+
       - name: Publish codepad
         run: mason publish --directory codepad --force
-        env:
-          BRICKHUB_EMAIL: ${{ secrets.BRICKHUB_EMAIL }}
-          BRICKHUB_PASSWORD: ${{ secrets.BRICKHUB_PASSWORD }}
