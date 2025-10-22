@@ -20,8 +20,10 @@ jobs:
       - name: Install Mason
         run: dart pub global activate mason_cli
 
-      - name: Log in to BrickHub
-        run: mason login --email ${{ secrets.BRICKHUB_EMAIL }} --password ${{ secrets.BRICKHUB_PASSWORD }}
+      - name: Create credentials file
+        run: |
+          mkdir -p ~/.config/mason
+          echo '${{ secrets.MASON_CREDENTIALS }}' > ~/.config/mason/mason-credentials.json
 
       - name: Publish codepad
         run: mason publish --directory codepad --force
