@@ -1,3 +1,7 @@
+import 'package:signals/signals.dart';
+
 void main(List<String> arguments) {
-  print('Hello world from {{snake_name}}!');
+  final s = signal(0);
+  effect(() => print(s.value));
+  s.value = 1;
 }

@@ -5,41 +5,36 @@ version: 0.1.0
 
 environment:
   sdk: ">={{dart_sdk}}"
+
 {{#dart}}
 executables:
   {{snake_name}}:
 {{/dart}}
+
 dependencies:
-  fpdart: any
-  riverpod: any
-  riverpod_annotation: any
+  signals: ^5.1.0
 
 {{^dart}}
   flutter:
     sdk: flutter
-  cupertino_icons: any
-  flutter_hooks: any
-  flutter_riverpod: any
-  hooks_riverpod: any
-  flex_color_scheme: any
+  cupertino_icons: ^1.0.6
+  flutter_hooks: ^0.20.5
 {{/dart}}
 
 dev_dependencies:
-  build_runner: any
-  custom_lint: any
-  riverpod_lint: any
-  riverpod_generator: any
-  very_good_analysis: any
+  build_runner: ^2.4.8
+  custom_lint: ^0.6.4
+  very_good_analysis: ^5.1.0
 
 {{#dart}}
-  test: any
+  test: ^1.24.9
 {{/dart}}
 {{^dart}}
   flutter_test:
     sdk: flutter
 {{/dart}}
 
-{{^dart}}  
+{{^dart}}
 flutter:
   uses-material-design: true
 {{/dart}}

@@ -1,59 +1,56 @@
-// ignore_for_file: unused_import
-
-import 'package:{{snake_name}}/functional.dart';
-import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
+import 'package:signals/signals_flutter.dart';
 
-Future<void> main() async {
-  // ignore: missing_provider_scope
-  // runApp(const FittedBox(child: CircularProgressIndicator.adaptive()));
-
-  // final container = ProviderContainer();
-  // await container.read(prefsProvider.future);
-  // ignore: missing_provider_scope
-  runApp(
-    // ProviderScope(
-    //   parent: container,
-    //   child: const //
-    const MyApp(),
-    // ),
-  );
+void main() {
+  runApp(const MyApp());
 }
 
-// final prefsProvider = FutureProvider<DateTime>((ref) async {
-//   await Future<void>.delayed(const Duration(seconds: 2));
-//   return DateTime.now();
-// });
-
 class MyApp extends StatelessWidget {
-  const MyApp({
-    super.key,
-  });
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // title: 'Call me an app!',
-      theme: FlexThemeData.light(scheme: FlexScheme.mandyRed),
-      darkTheme: FlexThemeData.dark(scheme: FlexScheme.mandyRed),
+      title: 'Flutter Signals Demo',
+      theme: ThemeData.light(),
+      darkTheme: ThemeData.dark(),
       home: const MyHomePage(),
     );
   }
 }
 
+final counter = signal(0);
+
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({
-    super.key,
-  });
+  const MyHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: Text('Hello World!'),
-      // ),
-      body: SafeArea(child: Container()),
-      // floatingActionButton: MyFAB(),
+      appBar: AppBar(
+        title: const Text('Flutter Signals Demo'),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            const Text(
+              'You have pushed the button this many times:',
+            ),
+            Watch((context) {
+              return Text(
+                '${counter.value}',
+                style: Theme.of(context).textTheme.headlineMedium,
+              );
+            }),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => counter.value++,
+        tooltip: 'Increment',
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }
