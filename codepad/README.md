@@ -28,7 +28,7 @@ You can always use `mason make codepad` directly to be prompted for the argument
 
 Packages included:
 
-- signals (for reactive state management)
+- signals/signals_flutter (for reactive state management)
 - very_good_analysis
 
 These aren't selectable.  Just ignore or delete the ones you don't want, but it's a good starting point for quick experiments.
