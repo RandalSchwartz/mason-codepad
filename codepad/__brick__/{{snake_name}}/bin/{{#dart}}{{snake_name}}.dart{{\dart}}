@@ -1,23 +1,25 @@
 import 'package:bloc_signals/bloc_signals.dart';
+import 'package:signals/signals.dart';
 
 class CounterCubit extends CubitSignal<int> {
-  CounterCubit() : super(0);
+  CounterCubit() : super(initialState: 0);
 
   void increment() => emit(stateValue + 1);
   void decrement() => emit(stateValue - 1);
 }
 
-void main(List<String> arguments) {
+void main(List<String> arguments) async {
   final counter = CounterCubit();
 
-  final cleanup = createEffect(() {
+  final cleanup = effect(() {
     print('Counter state: ${counter.stateValue}');
   });
 
-  counter.increment();
-  counter.increment();
-  counter.decrement();
+  counter
+    ..increment()
+    ..increment()
+    ..decrement();
 
   cleanup();
-  counter.close();
+  await counter.close();
 }

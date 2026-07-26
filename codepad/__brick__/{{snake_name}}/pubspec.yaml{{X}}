@@ -12,22 +12,21 @@ executables:
 {{/dart}}
 
 dependencies:
-  signals: any
   bloc_signals: any
-
 {{^dart}}
-  signals_flutter: any
   bloc_signals_flutter: any
-  signals_hooks: any
-  flutter_hooks: any
+  cupertino_icons: any
   flutter:
     sdk: flutter
-  cupertino_icons: any
+  flutter_hooks: any
+{{/dart}}
+  signals: any
+{{^dart}}
+  signals_flutter: any
+  signals_hooks: any
 {{/dart}}
 
 dev_dependencies:
-  very_good_analysis: any
-
 {{#dart}}
   test: any
 {{/dart}}
@@ -35,6 +34,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 {{/dart}}
+  very_good_analysis: any
 
 {{^dart}}
 flutter:
