@@ -18,7 +18,7 @@ void main() {
       }
     });
 
-    test('generates Dart playground successfully', () async {
+    test('generates and analyzes Dart playground successfully', () async {
       final brick = Brick.path(p.join(Directory.current.path, 'codepad'));
       final generator = await MasonGenerator.fromBrick(brick);
 
@@ -54,9 +54,31 @@ void main() {
         File(p.join(generatedDir.path, 'build.yaml')).existsSync(),
         isFalse,
       );
+
+      final pubGetRes = await Process.run(
+        'dart',
+        ['pub', 'get'],
+        workingDirectory: generatedDir.path,
+      );
+      expect(
+        pubGetRes.exitCode,
+        equals(0),
+        reason: 'dart pub get failed: ${pubGetRes.stderr}',
+      );
+
+      final analyzeRes = await Process.run(
+        'dart',
+        ['analyze'],
+        workingDirectory: generatedDir.path,
+      );
+      expect(
+        analyzeRes.exitCode,
+        equals(0),
+        reason: 'dart analyze failed:\n${analyzeRes.stdout}',
+      );
     });
 
-    test('generates Flutter playground successfully', () async {
+    test('generates and analyzes Flutter playground successfully', () async {
       final brick = Brick.path(p.join(Directory.current.path, 'codepad'));
       final generator = await MasonGenerator.fromBrick(brick);
 
@@ -89,6 +111,28 @@ void main() {
       expect(
         File(p.join(generatedDir.path, 'build.yaml')).existsSync(),
         isFalse,
+      );
+
+      final pubGetRes = await Process.run(
+        'flutter',
+        ['pub', 'get'],
+        workingDirectory: generatedDir.path,
+      );
+      expect(
+        pubGetRes.exitCode,
+        equals(0),
+        reason: 'flutter pub get failed: ${pubGetRes.stderr}',
+      );
+
+      final analyzeRes = await Process.run(
+        'flutter',
+        ['analyze'],
+        workingDirectory: generatedDir.path,
+      );
+      expect(
+        analyzeRes.exitCode,
+        equals(0),
+        reason: 'flutter analyze failed:\n${analyzeRes.stdout}',
       );
     });
   });
