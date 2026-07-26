@@ -13,9 +13,13 @@ executables:
 
 dependencies:
   signals: any
+  bloc_signals: any
 
 {{^dart}}
   signals_flutter: any
+  bloc_signals_flutter: any
+  hook_signals: any
+  flutter_hooks: any
   flutter:
     sdk: flutter
   cupertino_icons: any

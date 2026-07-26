@@ -1,0 +1,16 @@
+# Mason & Dart build files
+.mason/
+.dart_tool/
+.packages
+pubspec.lock
+
+# Test output directory
+output/
+
+# macOS / OS files
+.DS_Store
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.iml

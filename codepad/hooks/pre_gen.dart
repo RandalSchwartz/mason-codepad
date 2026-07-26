@@ -23,5 +23,14 @@ void run(HookContext context) {
   final dartSdk = Platform.version.split(' ').first;
   vars['dart_sdk'] = dartSdk;
 
+  var editor = vars['editor'] as String?;
+  if (editor == null || editor == 'code') {
+    final envEditor = Platform.environment['CODEPAD_EDITOR'] ??
+        Platform.environment['EDITOR'];
+    if (envEditor != null && envEditor.isNotEmpty) {
+      vars['editor'] = envEditor;
+    }
+  }
+
   // print('vars are ${context.vars}');
 }

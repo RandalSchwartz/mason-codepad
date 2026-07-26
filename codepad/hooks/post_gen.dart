@@ -6,6 +6,16 @@ Future<void> run(HookContext context) async {
   final vars = context.vars;
   final snake_name = vars['snake_name'] as String;
   final dart = vars['dart'] as bool;
+  var editor = vars['editor'] as String?;
+  if (editor == null || editor.isEmpty || editor == 'code') {
+    final envEditor = Platform.environment['CODEPAD_EDITOR'] ??
+        Platform.environment['EDITOR'];
+    if (envEditor != null && envEditor.isNotEmpty) {
+      editor = envEditor;
+    } else {
+      editor = editor ?? 'code';
+    }
+  }
 
   if (dart) {
     await Process.run(
@@ -20,14 +30,16 @@ Future<void> run(HookContext context) async {
       workingDirectory: snake_name,
     );
   }
-  await Process.run(
-    'code',
-    ['-n', '.'],
-    workingDirectory: snake_name,
-  );
-  await Process.run(
-    'code',
-    [dart ? 'bin/$snake_name.dart' : 'lib/main.dart'],
-    workingDirectory: snake_name,
-  );
+  if (editor.isNotEmpty) {
+    await Process.run(
+      editor,
+      ['-n', '.'],
+      workingDirectory: snake_name,
+    );
+    await Process.run(
+      editor,
+      [dart ? 'bin/$snake_name.dart' : 'lib/main.dart'],
+      workingDirectory: snake_name,
+    );
+  }
 }
