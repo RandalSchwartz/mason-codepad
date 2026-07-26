@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.17.0] - 2026-07-26
+
+- Upgrade hooks SDK constraint to >=3.0.0 <4.0.0
+- Add configurable editor variable with $CODEPAD_EDITOR and $EDITOR support
+- Update dependencies to signals, bloc_signals, signals_flutter, bloc_signals_flutter, hook_signals, flutter_hooks
+- Add CubitSignal Dart CLI and Flutter Counter starter apps
+- Remove stale custom_lint plugin from analysis_options template
+- Remove obsolete build.yaml template
+- Add unit tests for hooks and root integration test suite
+- Add root README.md and root .gitignore
+
 ## [0.16.1] - 2025-11-08
 
 - [task] add signals_flutter dependency
