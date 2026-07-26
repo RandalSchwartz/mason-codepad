@@ -20,7 +20,8 @@ void main() {
       vars = <String, dynamic>{
         'snake_name': tempDir.path,
         'dart': true,
-        'editor': '', // Empty string skips launching editor processes during unit tests
+        // Empty string skips launching editor processes during unit tests
+        'editor': '',
       };
       when(() => context.vars).thenReturn(vars);
     });
@@ -31,8 +32,12 @@ void main() {
       }
     });
 
-    test('accepts editor variable and executes pub get gracefully when editor is empty', () async {
-      await expectLater(post_gen.run(context), completes);
-    });
+    test(
+      'accepts editor variable and executes pub get gracefully when editor'
+      ' is empty',
+      () async {
+        await expectLater(post_gen.run(context), completes);
+      },
+    );
   });
 }

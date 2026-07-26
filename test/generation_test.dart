@@ -36,10 +36,24 @@ void main() {
 
       final generatedDir = Directory(p.join(tempDir.path, 'test_dart_app'));
       expect(generatedDir.existsSync(), isTrue);
-      expect(File(p.join(generatedDir.path, 'pubspec.yaml')).existsSync(), isTrue);
-      expect(File(p.join(generatedDir.path, 'bin', 'test_dart_app.dart')).existsSync(), isTrue);
-      expect(File(p.join(generatedDir.path, 'analysis_options.yaml')).existsSync(), isTrue);
-      expect(File(p.join(generatedDir.path, 'build.yaml')).existsSync(), isFalse);
+      expect(
+        File(p.join(generatedDir.path, 'pubspec.yaml')).existsSync(),
+        isTrue,
+      );
+      expect(
+        File(
+          p.join(generatedDir.path, 'bin', 'test_dart_app.dart'),
+        ).existsSync(),
+        isTrue,
+      );
+      expect(
+        File(p.join(generatedDir.path, 'analysis_options.yaml')).existsSync(),
+        isTrue,
+      );
+      expect(
+        File(p.join(generatedDir.path, 'build.yaml')).existsSync(),
+        isFalse,
+      );
     });
 
     test('generates Flutter playground successfully', () async {
@@ -60,10 +74,22 @@ void main() {
 
       final generatedDir = Directory(p.join(tempDir.path, 'test_flutter_app'));
       expect(generatedDir.existsSync(), isTrue);
-      expect(File(p.join(generatedDir.path, 'pubspec.yaml')).existsSync(), isTrue);
-      expect(File(p.join(generatedDir.path, 'lib', 'main.dart')).existsSync(), isTrue);
-      expect(File(p.join(generatedDir.path, 'analysis_options.yaml')).existsSync(), isTrue);
-      expect(File(p.join(generatedDir.path, 'build.yaml')).existsSync(), isFalse);
+      expect(
+        File(p.join(generatedDir.path, 'pubspec.yaml')).existsSync(),
+        isTrue,
+      );
+      expect(
+        File(p.join(generatedDir.path, 'lib', 'main.dart')).existsSync(),
+        isTrue,
+      );
+      expect(
+        File(p.join(generatedDir.path, 'analysis_options.yaml')).existsSync(),
+        isTrue,
+      );
+      expect(
+        File(p.join(generatedDir.path, 'build.yaml')).existsSync(),
+        isFalse,
+      );
     });
   });
 }
