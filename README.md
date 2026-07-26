@@ -21,9 +21,17 @@ Check out the [demo video](https://youtu.be/Bq0WhHciqFY) to see it in action.
 
 ## 📦 Installation
 
-### Global Installation (Recommended)
+### From Brickhub (Recommended)
 
-To install `codepad` globally so you can generate playgrounds from anywhere:
+Install `codepad` globally from [Brickhub](https://brickhub.dev):
+
+```sh
+mason add -g codepad
+```
+
+### From GitHub Source
+
+To install directly from the GitHub repository:
 
 ```sh
 mason add -g codepad --git-url https://github.com/RandalSchwartz/mason-codepad.git --git-path codepad

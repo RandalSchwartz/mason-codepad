@@ -2,6 +2,24 @@
 
 Use this brick to quickly test code snippets, similar to Dartpad, but having a full text editor (Visual Studio Code, Cursor, or custom editor) and access to the entire pub.dev ecosystem. It also includes all of my favorite starter packages for quick prototyping. Check out the [video](https://youtu.be/Bq0WhHciqFY) for a demo.
 
+## 📦 Installation
+
+Install globally from [Brickhub](https://brickhub.dev):
+
+```sh
+mason add -g codepad
+```
+
+Or install directly from GitHub source:
+
+```sh
+mason add -g codepad --git-url https://github.com/RandalSchwartz/mason-codepad.git --git-path codepad
+```
+
+---
+
+## 🛠️ Usage
+
 To use this brick, you need to have Visual Studio Code (or your preferred editor command) installed. You also need to create a bin directory in your PATH, and add the following shell scripts to it.
 
 Put this in your bin directory with the name `dplay` and make it executable:
