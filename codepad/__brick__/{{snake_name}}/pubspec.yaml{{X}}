@@ -18,7 +18,7 @@ dependencies:
 {{^dart}}
   signals_flutter: any
   bloc_signals_flutter: any
-  hook_signals: any
+  signals_hooks: any
   flutter_hooks: any
   flutter:
     sdk: flutter
