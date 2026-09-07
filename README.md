@@ -1,5 +1,9 @@
 # Mason Codepad
 
+> [!NOTE]
+> **Project Status: Sunsetted / Mothballed**
+> Version 1.0.0 is the final published release of the `codepad` Mason brick. This project is now in maintenance/archive mode as its playground creation capabilities are being transitioned to an AI Agent Skill for enhanced flexibility and autonomous workflow integration.
+
 > Like DartPad, but with a full IDE (Visual Studio Code, Cursor, or custom editor) and access to the entire pub.dev ecosystem.
 
 `codepad` is a [Mason](https://pub.dev/packages/mason) brick created by [Randal Schwartz](https://github.com/RandalSchwartz) to quickly scaffold Dart and Flutter playgrounds for testing code snippets and prototyping ideas.

@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.0] - 2026-09-07
+
+- Add `mocktail` to template `dev_dependencies` (#10)
+- Add verification test step in GitHub Actions publish workflow
+- **Deprecation**: Mark brick as final release / mothballed in favor of AI Agent Skill
+
 ## [0.17.2] - 2026-07-26
 
 - Fix `super(initialState: 0)` constructor invocation in `CubitSignal` starter templates

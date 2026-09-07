@@ -27,12 +27,13 @@ dependencies:
 {{/dart}}
 
 dev_dependencies:
-{{#dart}}
-  test: any
-{{/dart}}
 {{^dart}}
   flutter_test:
     sdk: flutter
+{{/dart}}
+  mocktail: any
+{{#dart}}
+  test: any
 {{/dart}}
   very_good_analysis: any
 
