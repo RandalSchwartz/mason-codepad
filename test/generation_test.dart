@@ -36,9 +36,14 @@ void main() {
 
       final generatedDir = Directory(p.join(tempDir.path, 'test_dart_app'));
       expect(generatedDir.existsSync(), isTrue);
+      final pubspecFile = File(p.join(generatedDir.path, 'pubspec.yaml'));
       expect(
-        File(p.join(generatedDir.path, 'pubspec.yaml')).existsSync(),
+        pubspecFile.existsSync(),
         isTrue,
+      );
+      expect(
+        pubspecFile.readAsStringSync(),
+        contains('mocktail: any'),
       );
       expect(
         File(
@@ -68,7 +73,7 @@ void main() {
 
       final analyzeRes = await Process.run(
         'dart',
-        ['analyze'],
+        ['analyze', '--fatal-infos'],
         workingDirectory: generatedDir.path,
       );
       expect(
@@ -96,9 +101,14 @@ void main() {
 
       final generatedDir = Directory(p.join(tempDir.path, 'test_flutter_app'));
       expect(generatedDir.existsSync(), isTrue);
+      final pubspecFile = File(p.join(generatedDir.path, 'pubspec.yaml'));
       expect(
-        File(p.join(generatedDir.path, 'pubspec.yaml')).existsSync(),
+        pubspecFile.existsSync(),
         isTrue,
+      );
+      expect(
+        pubspecFile.readAsStringSync(),
+        contains('mocktail: any'),
       );
       expect(
         File(p.join(generatedDir.path, 'lib', 'main.dart')).existsSync(),
@@ -126,7 +136,7 @@ void main() {
 
       final analyzeRes = await Process.run(
         'flutter',
-        ['analyze'],
+        ['analyze', '--fatal-infos'],
         workingDirectory: generatedDir.path,
       );
       expect(

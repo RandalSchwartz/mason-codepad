@@ -1,5 +1,9 @@
 # Codepad: like Dartpad, but with a full text editor and my favorite packages
 
+> [!NOTE]
+> **Project Status: Sunsetted / Mothballed**
+> Version 1.0.0 is the final published release of the `codepad` Mason brick. This project is now in maintenance/archive mode as its playground creation capabilities are being transitioned to an AI Agent Skill for enhanced flexibility and autonomous workflow integration.
+
 Use this brick to quickly test code snippets, similar to Dartpad, but having a full text editor (Visual Studio Code, Cursor, or custom editor) and access to the entire pub.dev ecosystem. It also includes all of my favorite starter packages for quick prototyping. Check out the [video](https://youtu.be/Bq0WhHciqFY) for a demo.
 
 ## 📦 Installation
